@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Вагон</title>
+</head>
+<body>
+    <h1 align="center" style="color:Black">Вагоны</h1>
+    <h3 align="center" style="color:Black">Список вагонов</h3>
+    <table align="center">
+        <tbody>
+            <tr>
+                <th>Номер вагона</th>
+                <th>Тип вагона</th>
+                <th>Вместительность</th>
+            </tr>
+        </tbody>
+    {% for wagon in wagons %}
+    <div>
+        <tbody>
+            <tr>
+                <td>{{ wagon.Number}}</td>
+                <td>{{ wagon.Type}}</td>
+                <td>{{ wagon.Capacity}}</td>
+            </tr>
+        </tbody>
+    </div>
+    {% endfor %}
+    </table>
+
+<div class="container">
+<h2 align="center" style="color:Black">Создание</h2>
+<div align="center" style="color:Black">
+    <a href="/createWagon" align="center" style="color:Black">Новый вагон</a>
+</div>
+</div>
+
+</body>
+</html>

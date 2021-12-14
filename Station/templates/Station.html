@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Станции</title>
+</head>
+<body>
+    <h1 align="center" style="color:Black">Станции</h1>
+    <h3 align="center" style="color:Black">Список станция</h3>
+    <table align="center">
+        <tbody>
+            <tr>
+                <th>Тип станции</th>
+                <th>Номер станции</th>
+            </tr>
+        </tbody>
+    {% for station in stations %}
+    <div>
+        <tbody>
+            <tr>
+            <td>{{ station.Type}}</td>
+            <td>{{ station.Number}}</td>
+            </tr>
+        </tbody>
+    </div>
+    {% endfor %}
+    </table>
+    <a href="{{ url_for('createStation') }}">Создать станцию </a>
+
+
+</body>
+</html>
+

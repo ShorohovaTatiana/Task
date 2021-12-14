@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Поезд</title>
+</head>
+<body>
+    <h1 align="center" style="color:Black">Поезда</h1>
+    <h3 align="center" style="color:Black">Список поездов</h3>
+    <table align="center">
+        <tbody>
+            <tr>
+                <th>Тип поезда</th>
+                <th>Номер поезда</th>
+                <th>Номер поезда</th>
+            </tr>
+        </tbody>
+    {% for train in trains %}
+    <div>
+        <tbody>
+            <tr>
+                <td>{{ train.Type}}</td>
+                <td>{{ train.Number}}</td>
+                <td>{{train.TrainRoutes}}</td>
+            </tr>
+        </tbody>
+    </div>
+    {% endfor %}
+    </table>
+
+
+
+</body>
+</html>

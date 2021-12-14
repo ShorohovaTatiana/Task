@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать вагон</title>
+    {% include 'connection.html' %}
+</head>
+<body>
+<div class="container">
+    <div class="edit_place">
+        <input class="admin_input" placeholder="Введите номер" />
+        <input class="admin_input" placeholder="Вместимость" />
+        <input class="admin_input" placeholder="Введите тип" />
+        <div class="big_href m-0 w-100" id="save_btn">
+            Создать
+        </div>
+    </div>
+</div>
+<script src="/static/error.js"></script>
+<script>
+    let inp = document.getElementsByClassName("admin_input");
+    save_btn.onclick = function () {
+        createWagon()
+    }
+
+    for(let i = 0; i < inp.length; i++){
+        inp[i].onfocus = function(){
+            inp[i].classList.remove("error");
+        }
+    }
+
+
+    function createWagon() {
+        for (let i = 0; i < inp.length; i++) {
+            if (inp[i].value === '') {
+                inp[i].classList.add('error');
+            }
+        }
+        if (document.getElementsByClassName("error").length) return errors("Не все данные заполнены!", 1);
+        let data = {
+            'number': Number(inp[0].value),
+            'capacity': inp[1].value,
+            'type': Number(inp[2].value),
+        }
+        $.ajax({
+            url: '/wagon/createWagon',
+            type: "POST",
+            data: data,
+            success: function (msg) {
+                return errors("Данные успешно изменены!", 2);
+            }
+        })
+    }
+</script>
+</body>
+</html>

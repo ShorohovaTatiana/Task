@@ -1,0 +1,32 @@
+
+<!DOCTYPE html >
+<html lang="ru">
+<head >
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" >
+    <title>Списочек</title>
+</head>
+<div class="header">
+    <h1 align="center" style="color:Black">Главная страница</h1>
+        <div class="header_section">
+            <a href="{{ url_for('station') }}">
+                    <h3 align="center" style="color:#8d17fc">Станции</h3>
+            </a>
+            <a href="{{ url_for('train') }}">
+                    <h3 align="center" style="color:#8d17fc">Поезда</h3>
+            </a>
+            <a href="{{ url_for('trainRoute') }}">
+                    <h3 align="center" style="color:#8d17fc">Маршрут следования</h3>
+            </a>
+            <a href="{{ url_for('trainWagon') }}">
+                    <h3 align="center" style="color:#8d17fc">Размещение</h3>
+
+            </a>
+            <a href="{{ url_for('wagon') }}">
+                    <h3 align="center" style="color:#8d17fc">Вагоны</h3>
+            </a>
+        </div>
+</div>
